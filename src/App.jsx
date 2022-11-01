@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Hero } from './Components'
+import {heroapi} from "./Data/Data"
 
 function App() {
     const [count, setCount] = useState(0)
@@ -8,7 +9,7 @@ function App() {
     return (
         <div className="App">
             <main>
-                <Hero/>
+                <Hero heroapi={heroapi}/>
             </main>
         </div>
     )
