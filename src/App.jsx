@@ -10,8 +10,8 @@ function App() {
         <div className="App">
             <main>
                 <Hero heroapi={heroapi}/>
-                <Sales/>
-                <Sales/>
+                <Sales endpoint = {popularsales}/>
+                <Sales endpoint =  {toprateslaes}/>
             </main>
         </div>
     )

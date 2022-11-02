@@ -2,12 +2,16 @@ import React from 'react'
 import Item from './Utils/Item'
 import Title from './Utils/Title'
 
-const Sales = () => {
+const Sales = ({endpoint: {title, items}}) => {
+    // console.log(endpoint);
   return (
     <div>
-        <Title/>
+        <Title title={title}/>
         <div className="">
-            <Item/>
+            {/* <Item/> */}
+            {items?.map((item, i) => (
+                <Item {...item} key={i}/>
+            ))}
         </div>
     </div>
   )
