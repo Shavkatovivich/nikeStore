@@ -3,7 +3,7 @@ import heroimg from "../assets/hero.png";
 import hightlightimg from "../assets/hightlightimg.png";
 import sneakershoe from "../assets/sneaker.png";
 
-import clip from "../assets/video/clip.mp4";
+import clip from "../assets/Video/clip.mp4";
 import vcover1 from "../assets/video/vcover1.png";
 import vcover2 from "../assets/video/vcover2.png";
 import vcover3 from "../assets/video/vcover3.png";
