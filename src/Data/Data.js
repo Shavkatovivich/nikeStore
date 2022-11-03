@@ -87,17 +87,6 @@ const popularsales = {
       color: "from-violet-500 to-indigo-500",
       shadow: "shadow-lg shadow-violet-500",
     },
-    // {
-    //   id: "0M0x3",
-    //   title: "Nike Addapt BB Rose",
-    //   text: "MEN Running Shoes",
-    //   rating: "5+",
-    //   btn: "Buy Now",
-    //   img: product3,
-    //   price: "150",
-    //   color: "from-red-500 to-rose-500",
-    //   shadow: "shadow-lg shadow-rose-500",
-    // },
   ],
 };
 
