@@ -38,7 +38,7 @@ const Stories = ({story: {title, news }}) => {
                                         <p className='text-sm text-justify lg:text-xs'>{val.text}</p>  
                                     </div>
                                     <div className="flex items-center justify-center px-4 w-full">
-                                        <a className='w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5 button-theme' href={val.url}>{val.btn}</a>
+                                        <a className='w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5 button-theme' href={val.url} target="_blank" role={"button"}>{val.btn}</a>
                                     </div>
                             </div>
                         </SplideSlide>
