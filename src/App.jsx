@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { FlexContent, Footer, Hero, Navbar, Sales, Stories } from './Components'
+import { Cart, FlexContent, Footer, Hero, Navbar, Sales, Stories } from './Components'
 import {heroapi,popularsales, toprateslaes, highlight, sneaker, story, footerAPI} from "./Data/Data"
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <div className="App">
             <main className='flex flex-col gap-16 relative'>
                 <Navbar/>
+                <Cart/>
                 <Hero heroapi={heroapi}/>
                 <Sales endpoint = {popularsales} ifExists/>
                 <FlexContent endpoint = {highlight} ifExists/>
