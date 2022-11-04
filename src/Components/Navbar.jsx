@@ -7,7 +7,7 @@ const Navbar = () => {
     const [navState, setNavState] = useState(false)
 
     const onNavScroll = () => {
-        if(window.screenY > 30) {
+        if(window.scrollY > 30) {
             setNavState(true)
         }else {
             setNavState(false)
@@ -24,24 +24,24 @@ const Navbar = () => {
 
   return (
     <>
-        <header className={!navState ? "absolute top-7 left-0 right-0 opacity-100 z-50" : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-50 blur-effect-theme"}>
+        <header className={!navState ? "absolute top-7 left-0 right-0 opacity-100 z-50" : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-[999] blur-effect-theme"}>
             <nav className='flex items-center justify-between nike-container'>
                 <div className="flex items-center">
-                    <img className='w-16 h-auto' src={logo} alt="logo" />
+                    <img className={`w-16 h-auto ${navState && "filter brightness-0"}`} src={logo} alt="logo" />
                 </div>
                 <ul className='flex items-center justify-center gap-2'>
                     <li className='grid items-center'>
-                        <MagnifyingGlassIcon  className='icon-style'/>
+                        <MagnifyingGlassIcon   className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}/>
                     </li>
 
                     <li className='grid items-center'>
-                        <HeartIcon className='icon-style'/>
+                        <HeartIcon className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`}/>
                     </li>
 
                     <li className='grid items-center'>
                         <button className='border-none outline-none active:scale-100 transition-all duration-100 relative' type='button'>
                             <ShoppingBagIcon className='icon-style'/>
-                            <div className={`absolute top-4 right-0  bg-white text-slate-900 shadow shadow-slate w-4 h-4  text-[0.65rem] leading-tight font-medium rounded-full flex items-center justify-center cursor-pointer hover:scale-111 transition-all duration-300`}>
+                            <div className={`absolute top-4 right-0  shadow w-4 h-4  text-[0.65rem] leading-tight font-medium rounded-full flex items-center justify-center cursor-pointer hover:scale-111 transition-all duration-300 ${navState ? "bg-slate-900 text-slate-100 shadow-slate-900" : "bg-slate-100 text-slate-900 shadow-slate-100" }`}>
                                 0
                             </div>
                         </button>
