@@ -1,10 +1,20 @@
 import React, {useState, useEffect} from 'react'
+import { useDispatch } from 'react-redux'
 import {HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon} from "@heroicons/react/24/outline"
 import logo from "../assets/logo.png"
+import { setOpenCart } from '../App/CartSlice.js'
 
 const Navbar = () => {
 
     const [navState, setNavState] = useState(false)
+
+    const dispatch = useDispatch();
+
+    const onCartToggle = () => {
+        dispatch(setOpenCart({
+            cartState: true
+        }))
+    }
 
     const onNavScroll = () => {
         if(window.scrollY > 30) {
@@ -39,7 +49,8 @@ const Navbar = () => {
                     </li>
 
                     <li className='grid items-center'>
-                        <button className='border-none outline-none active:scale-100 transition-all duration-100 relative' type='button'>
+                        <button className='border-none outline-none active:scale-100 transition-all duration-100 relative'
+                             onClick={onCartToggle} type='button'>
                             <ShoppingBagIcon className='icon-style'/>
                             <div className={`absolute top-4 right-0  shadow w-4 h-4  text-[0.65rem] leading-tight font-medium rounded-full flex items-center justify-center cursor-pointer hover:scale-111 transition-all duration-300 ${navState ? "bg-slate-900 text-slate-100 shadow-slate-900" : "bg-slate-100 text-slate-900 shadow-slate-100" }`}>
                                 0
