@@ -1,9 +1,17 @@
-import { StarIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { StarIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
+import { setAddItemToCart } from '../../App/CartSlice';
 
 const Item = ({ifExists, id, color, shadow, title, text, img, btn, rating, price}) => {
 
-    // console.log(id);
+     const dispatch = useDispatch();
+
+    const onAddToCart = () => {
+        const item = {id, title, text, img, color, shadow, rating, price};
+
+        dispatch(setAddItemToCart(item))
+    }
 
   return (
     <>
@@ -22,7 +30,7 @@ const Item = ({ifExists, id, color, shadow, title, text, img, btn, rating, price
                 </div>
             </div>
             <div className="flex items-center gap-3">
-                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200' type='button'><ShoppingBagIcon className='icon-style text-slate-900'/></button>
+                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200' onClick={() => onAddToCart()} type='button'><ShoppingBagIcon className='icon-style text-slate-900'/></button>
                 <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200 text-sm text-black px-3 py-1  ' type="button">{btn}</button>
             </div>
             <div className={`flex items-center ${ifExists? "absolute top-5 right-1" : "justify-center"}`}>

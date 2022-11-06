@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-        <header className={!navState ? "absolute top-7 left-0 right-0 opacity-100 z-50" : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-[999] blur-effect-theme"}>
+        <header className={!navState ? "absolute top-7 left-0 right-0 opacity-100 z-50" : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-[222] blur-effect-theme"}>
             <nav className='flex items-center justify-between nike-container'>
                 <div className="flex items-center">
                     <img className={`w-16 h-auto ${navState && "filter brightness-0"}`} src={logo} alt="logo" />
