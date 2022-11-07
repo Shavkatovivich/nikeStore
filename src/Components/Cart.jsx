@@ -4,6 +4,7 @@ import { selectCarState, selectCartItems, setCloseCart } from '../App/CartSlice.
 import CartCount from './Cart/CartCount'
 import CartEmpty from './Cart/CartEmpty'
 import CartItem from './Cart/CartItem'
+import Item from './Utils/Item.jsx';
 
 function Cart() {
 
@@ -27,7 +28,7 @@ function Cart() {
 
                 {cartItems?.length === 0 ? <CartEmpty/> : <div>
                     <div>
-                      {cartItems?.map((val, i) => (
+                      {cartItems?.map((item, i) => (
                         <CartItem key={i} item={item}/>
                       ))}
                     </div>
