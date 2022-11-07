@@ -4,9 +4,9 @@ import hightlightimg from "../assets/hightlightimg.png";
 import sneakershoe from "../assets/sneaker.png";
 
 import clip from "../assets/Video/clip.mp4";
-// import vcover1 from "../assets/video/vcover1.png";
-import vcover2 from "../assets/video/vcover2.png";
-import vcover3 from "../assets/video/vcover3.png";
+import vcover1 from "../../src/assets/Video/vcover1.png";
+import vcover2 from "../../src/assets/Video/vcover2.png";
+import vcover3 from "../../src/assets/Video/vcover3.png";
 
 import psale1 from "../assets/nike-air-red.png";
 import psale2 from "../assets/nike-adapt-bb.png";
@@ -38,7 +38,7 @@ const heroapi = {
   img: heroimg,
   btntext: "Explore Product",
   videos: [
-    // { imgsrc: vcover1, clip: clip },
+    { imgsrc: vcover1, clip: clip },
     { imgsrc: vcover2, clip: clip },
     { imgsrc: vcover3, clip: clip },
   ],
