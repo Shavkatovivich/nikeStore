@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { StarIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
-import { setAddItemToCart } from '../../App/CartSlice';
+import { setAddItemToCart, setOpenCart } from '../../App/CartSlice';
 
 const Item = ({ifExists, id, color, shadow, title, text, img, btn, rating, price}) => {
 
@@ -13,6 +13,11 @@ const Item = ({ifExists, id, color, shadow, title, text, img, btn, rating, price
         dispatch(setAddItemToCart(item))
     }
 
+    const onCartToggle = () => {
+        dispatch(setOpenCart({
+            cartState:true
+        }))
+    }
   return (
     <>
         <div className={`relative bg-gradient-to-b ${ifExists ? "justify-items-start" : "justify-items-center"} ${color} ${shadow} grid items-center rounded-xl py-8  px-5 transition-all duration-700 ease-out w-full hover:scale-105`}>
@@ -30,8 +35,9 @@ const Item = ({ifExists, id, color, shadow, title, text, img, btn, rating, price
                 </div>
             </div>
             <div className="flex items-center gap-3">
-                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200' onClick={() => onAddToCart()} type='button'><ShoppingBagIcon className='icon-style text-slate-900'/></button>
-                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200 text-sm text-black px-3 py-1  ' type="button">{btn}</button>
+                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200' 
+                    onClick={() => {onAddToCart(); onCartToggle()}} type='button'><ShoppingBagIcon className='icon-style text-slate-900'/></button>
+                <button className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200 text-sm text-black px-3 py-1  ' type="button"   onClick={() => onAddToCart()}>{btn}</button>
             </div>
             <div className={`flex items-center ${ifExists? "absolute top-5 right-1" : "justify-center"}`}>
                 <img className={`transitions-theme hover:rotate-12 ${ifExists? "h-auto w-64 lg:w-56 md:w-48 -rotate-[35deg]" : "h-36 w64"}`}src={img} alt={`img/item-img/${id}`}/>
